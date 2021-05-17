@@ -59,7 +59,7 @@
 		607EEA201E50EDDD00F2E8B6 /* NSObject+Dictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E80F731E16BA290042D98D /* NSObject+Dictionary.m */; };
 		607EEA211E50EDDD00F2E8B6 /* NSString+Formatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E80F751E16BA290042D98D /* NSString+Formatter.m */; };
 		607EEA221E50EE1000F2E8B6 /* CCIBlockDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = C5E80F071E16BA280042D98D /* CCIBlockDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		607EEA231E50EE1000F2E8B6 /* CCIFeaturesManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C5E80F091E16BA280042D98D /* CCIFeaturesManager.h */; };
+		607EEA231E50EE1000F2E8B6 /* CCIFeaturesManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C5E80F091E16BA280042D98D /* CCIFeaturesManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		607EEA241E50EE1000F2E8B6 /* CCIStepsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C5E80F0B1E16BA280042D98D /* CCIStepsManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		607EEA251E50EE1000F2E8B6 /* CCIArgument.h in Headers */ = {isa = PBXBuildFile; fileRef = C5E80F0E1E16BA280042D98D /* CCIArgument.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		607EEA261E50EE1000F2E8B6 /* CCIAroundHock.h in Headers */ = {isa = PBXBuildFile; fileRef = C5E80F101E16BA280042D98D /* CCIAroundHock.h */; };
@@ -651,14 +651,17 @@
 				TargetAttributes = {
 					3E38B0E91DDDE0A400C1CF5A = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3P8C7H426Z;
 						ProvisioningStyle = Automatic;
 					};
 					607EE9E91E50ED5800F2E8B6 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3P8C7H426Z;
 						ProvisioningStyle = Automatic;
 					};
 					C57B79D71E15847C001B758D = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3P8C7H426Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -919,6 +922,7 @@
 		3E38B0F21DDDE0A400C1CF5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 3P8C7H426Z;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"SRC_ROOT=@\\\"$(SRCROOT)\\\"",
@@ -933,6 +937,7 @@
 		3E38B0F31DDDE0A400C1CF5A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 3P8C7H426Z;
 				GCC_PREPROCESSOR_DEFINITIONS = "SRC_ROOT=@\\\"$(SRCROOT)\\\"";
 				INFOPLIST_FILE = CucumberishFeatureDefinition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -945,9 +950,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3P8C7H426Z;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -973,9 +979,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3P8C7H426Z;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -997,6 +1004,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = 3P8C7H426Z;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"SRC_ROOT=@\\\"$(SRCROOT)\\\"",
@@ -1013,6 +1021,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = 3P8C7H426Z;
 				INFOPLIST_FILE = CucumberishTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sidekickr.CucumberishTests;

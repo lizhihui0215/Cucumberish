@@ -11,7 +11,7 @@
 
 //#import <Cucumberish/Cucumberish.h> if installed using cocoapods
 __attribute__((constructor))
-void CucumberishInit()
+void CucumberishInit(void)
 {
     [[Cucumberish instance] setPrettyNamesAllowed:YES];
     [CucumberFeatureSteps new];

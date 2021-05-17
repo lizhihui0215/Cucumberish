@@ -36,6 +36,7 @@
 #import <Cucumberish/CCILocation.h>
 #import <Cucumberish/CCIBackground.h>
 #import <Cucumberish/CCIFeature.h>
+#import <Cucumberish/CCIFeaturesManager.h>
 
 
 typedef NS_ENUM(NSInteger, CCILanguage) {
