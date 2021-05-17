@@ -20,7 +20,22 @@
                            targetName,
                            location.filePath];
 
-    [self recordFailureWithDescription:description inFile:filePath atLine:location.line expected:expected];
+//    [self recordFailureWithDescription:description inFile:filePath atLine:location.line expected:expected];
+    
+    XCTIssueType failure = expected ? XCTIssueTypeAssertionFailure : XCTIssueTypeUncaughtException;
+    
+    XCTSourceCodeLocation *sourceCodeLocation = [[XCTSourceCodeLocation alloc] initWithFilePath:filePath lineNumber:location.line];
+    
+    XCTSourceCodeContext *sourceCodeContext = [[XCTSourceCodeContext alloc] initWithLocation:sourceCodeLocation];
+    
+    XCTIssue *issue = [[XCTIssue alloc] initWithType:failure
+                                  compactDescription:description
+                                 detailedDescription:description
+                                   sourceCodeContext:sourceCodeContext
+                                     associatedError:nil
+                                         attachments:@[]];
+    
+    [self recordIssue:issue];
 }
 
 @end

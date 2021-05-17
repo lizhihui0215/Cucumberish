@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607EE9E91E50ED5800F2E8B6"
-               BuildableName = "Cucumberish.framework"
-               BlueprintName = "Cucumberish"
+               BlueprintIdentifier = "3E38B0E91DDDE0A400C1CF5A"
+               BuildableName = "CucumberishFeatureDefinition.xctest"
+               BlueprintName = "CucumberishFeatureDefinition"
                ReferencedContainer = "container:CucumberishLibrary.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,15 +27,6 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607EE9E91E50ED5800F2E8B6"
-            BuildableName = "Cucumberish.framework"
-            BlueprintName = "Cucumberish"
-            ReferencedContainer = "container:CucumberishLibrary.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -44,16 +35,6 @@
                BlueprintIdentifier = "3E38B0E91DDDE0A400C1CF5A"
                BuildableName = "CucumberishFeatureDefinition.xctest"
                BlueprintName = "CucumberishFeatureDefinition"
-               ReferencedContainer = "container:CucumberishLibrary.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C57B79D71E15847C001B758D"
-               BuildableName = "CucumberishTests.xctest"
-               BlueprintName = "CucumberishTests"
                ReferencedContainer = "container:CucumberishLibrary.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -69,15 +50,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607EE9E91E50ED5800F2E8B6"
-            BuildableName = "Cucumberish.framework"
-            BlueprintName = "Cucumberish"
-            ReferencedContainer = "container:CucumberishLibrary.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -88,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607EE9E91E50ED5800F2E8B6"
-            BuildableName = "Cucumberish.framework"
-            BlueprintName = "Cucumberish"
+            BlueprintIdentifier = "3E38B0E91DDDE0A400C1CF5A"
+            BuildableName = "CucumberishFeatureDefinition.xctest"
+            BlueprintName = "CucumberishFeatureDefinition"
             ReferencedContainer = "container:CucumberishLibrary.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
