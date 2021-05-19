@@ -6,3 +6,12 @@ CucumberishLibraryTest/CucumberishLibrary.xcodeproj/project.xcworkspace/xcuserda
 
 CucumberishExample/DerivedData
 CucumberishExample/Build
+CucumberishLibraryTest/.idea/.gitignore
+CucumberishLibraryTest/.idea/.name
+CucumberishLibraryTest/.idea/CucumberishLibraryTest.iml
+CucumberishLibraryTest/.idea/modules.xml
+CucumberishLibraryTest/.idea/vcs.xml
+CucumberishLibraryTest/.idea/xcode.xml
+CucumberishLibraryTest/.idea/runConfigurations/Cucumberish.xml
+CucumberishLibraryTest/.idea/runConfigurations/CucumberishFeatureDefinition.xml
+CucumberishLibraryTest/.idea/runConfigurations/CucumberishTests.xml
