@@ -221,6 +221,6 @@ void CucumberishInit(void)
 	[Cucumberish instance].fixMissingLastScenario = YES;
 	//Tell Cucumberish the name of your features folder and let it execute them for you...
 	NSBundle * bundle = [NSBundle bundleForClass:[CucumberishTester class]];
-	[Cucumberish executeFeaturesInDirectory:@"Features" fromBundle:bundle includeTags:@[@"run"] excludeTags:@[@"skip"]];
+	[Cucumberish executeFeaturesForHost:nil inDirectory:@"Features" fromBundle:bundle includeTags:@[@"run"] excludeTags:@[@"skip"]];
 }
 

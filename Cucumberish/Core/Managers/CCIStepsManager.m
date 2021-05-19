@@ -24,6 +24,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <JavaScriptCore/JavaScriptCore.h>
 #import "CCIStepsManager.h"
 #import "Cucumberish.h"
 #import "CCIStep.h"
@@ -206,6 +207,9 @@ const NSString * kXCTestCaseKey = @"XCTestCase";
     
     XCTContextActivityBlock activityBlock = ^(id activity) {
         NSDate *startDate = [NSDate date];
+        if ([testCase isKindOfClass:[XCTestCase class]]) {
+            [Cucumberish instance].hostTestCase.invocation = ((XCTestCase *)testCase).invocation;
+        }
         implementation.body(implementation.matchedValues, implementation.additionalContent);
         step.duration = [[NSDate date] timeIntervalSinceDate:startDate] * 1000000000;
     };

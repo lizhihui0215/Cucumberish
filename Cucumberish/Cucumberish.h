@@ -133,6 +133,12 @@ typedef NS_ENUM(NSInteger, CCILanguage) {
 @property (nonatomic, strong, readonly) NSBundle * containerBundle;
 
 /**
+ Test case for host app
+ */
+@property (nonatomic, strong, readonly) XCTestCase *hostTestCase;
+
+
+/**
  Retuans a singleton instance of Cucumberish
  
  @return singleton instance of Cucumberish
@@ -179,12 +185,11 @@ typedef NS_ENUM(NSInteger, CCILanguage) {
 - (void)beginExecution;
 
 
-
 /**
  Conventient method that calls parserFeaturesInDirectory:fromBundle:includeTags:excludeTags: followed by an immediate call to beginExecution
  
  */
-+ (void)executeFeaturesInDirectory:(NSString *)featuresDirectory fromBundle:(NSBundle *)bundle includeTags:(NSArray *)tags excludeTags:(NSArray *)excludedTags;
++ (void)executeFeaturesForHost:(XCTestCase *)testCase inDirectory:(NSString *)featuresDirectory fromBundle:(NSBundle *)bundle includeTags:(NSArray *)tags excludeTags:(NSArray *)excludedTags;
 
 
 @end

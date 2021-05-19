@@ -51,7 +51,7 @@ OBJC_EXTERN NSString * stepDefinitionLineForStep(CCIStep * step);
 @interface Cucumberish()
 @property (nonatomic, copy) void(^beforeStartHock)(void);
 @property (nonatomic, copy) void(^afterFinishHock)(void);
-
+@property (nonatomic, strong) XCTestCase *hostTestCase;
 @property (nonatomic, strong) NSMutableArray<CCIHock *> * beforeHocks;
 @property (nonatomic, strong) NSMutableArray<CCIHock *> * afterHocks;
 @property (nonatomic, strong) NSMutableArray<CCIAroundHock *> * aroundHocks;
@@ -147,9 +147,10 @@ OBJC_EXTERN NSString * stepDefinitionLineForStep(CCIStep * step);
     return matches;
 }
 
-+ (void)executeFeaturesInDirectory:(NSString *)featuresDirectory fromBundle:(NSBundle *)bundle includeTags:(NSArray *)tags excludeTags:(NSArray *)excludedTags
-{
-    [[[Cucumberish instance] parserFeaturesInDirectory:featuresDirectory
++ (void)executeFeaturesForHost:(XCTestCase *)testCase inDirectory:(NSString *)featuresDirectory fromBundle:(NSBundle *)bundle includeTags:(NSArray *)tags excludeTags:(NSArray *)excludedTags {
+    Cucumberish *cucumberish = [Cucumberish instance];
+    cucumberish.hostTestCase = testCase;
+    [[cucumberish parserFeaturesInDirectory:featuresDirectory
                                             fromBundle:bundle
                                            includeTags:tags
                                            excludeTags:excludedTags] beginExecution];
@@ -481,7 +482,7 @@ OBJC_EXTERN NSString * stepDefinitionLineForStep(CCIStep * step);
 {
     CCIFeature * feature = [[CCIFeaturesManager instance] getFeatureForClass:[self class]];
     XCTestCase * invocationTest;
-
+    
     for(CCIScenarioDefinition * s in feature.scenarioDefinitions){
         NSString * scenarioName = NSStringFromSelector(selector);
         if ([s.name isEqualToString:scenarioName]){
@@ -585,8 +586,12 @@ void executeDryRun(XCTestCase * self, NSArray <CCIStep *> * steps)
 
 void executeScenario(XCTestCase * self, SEL _cmd, CCIScenarioDefinition * scenario, CCIFeature * feature)
 {
-    self.continueAfterFailure = YES;
-
+    @try {
+        self.continueAfterFailure = [[Cucumberish instance].hostTestCase valueForKey:@"recordMode"];
+    } @catch (NSException *exception) {
+        NSLog(@"[[Cucumberish instance].hostTestCase valueForKey:@\"recordMode\"] failure with error: %@", exception);
+    }
+    
     NSString * targetName = [[Cucumberish instance] testTargetFolderName] ? : [[[Cucumberish instance] containerBundle] infoDictionary][@"CFBundleName"];
     NSString * filePathPrefix = [NSString stringWithFormat:@"%@/%@", [Cucumberish instance].testTargetSrcRoot, targetName];
 
@@ -724,7 +729,7 @@ void executeSteps(XCTestCase * testCase, NSArray * steps, id parentScenario, NSS
                 scenario.success = NO;
                 scenario.failureReason = exception.reason;
             }
-            break;
+            if (!testCase.continueAfterFailure) { break; }
         }
     }
 }
